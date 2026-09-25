@@ -1,0 +1,13 @@
+# 대화 기록 (공개 금지)
+sessions/
+
+# 실행·테스트 부산물
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+smoke_output/
+
+# 로컬 설정·비밀
+.env
+settings.json

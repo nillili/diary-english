@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "diary-english"
+version = "0.1.0"
+description = "일기 영어회화 데스크톱 앱"
+requires-python = ">=3.10,<3.11"
+dependencies = []  # 실제 버전은 requirements.lock.txt 참조
+
+[project.scripts]
+diary-english = "diary_english.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+    "integration: 실제 모델·오디오 장치가 필요한 테스트 (기본 실행 제외)",
+]
+addopts = "-m 'not integration'"
