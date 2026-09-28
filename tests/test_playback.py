@@ -63,11 +63,10 @@ def test_repeat_next_and_last(pb):  # A09
     mgr.next()
     assert mgr.index == 1 and player.last_played() == "002.mp3"
     mgr.next()
-    msgs = []
-    mgr.message.connect(msgs.append)
-    mgr.next()
-    assert mgr.index == 2 and msgs == ["마지막 문장입니다."]
-    assert mgr.state == PlayState.PLAYING  # 재생 중인 마지막 문장 유지
+    assert mgr.index == 2 and player.last_played() == "003.mp3"
+    mgr.next()  # 마지막 다음은 첫 문장
+    assert mgr.index == 0 and player.last_played() == "001.mp3"
+    assert mgr.state == PlayState.PLAYING
 
 
 def test_rapid_next_plays_only_final_choice(pb):

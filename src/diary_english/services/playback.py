@@ -109,11 +109,10 @@ class PlaybackManager(QObject):
     def next(self) -> None:
         if not self._artifact:
             return
-        if self._index + 1 >= self.count:
-            self.message.emit("마지막 문장입니다.")
-            return  # 재생 중인 문장은 그대로 둔다
+        if self.count == 0:
+            return
         self._player.stop()
-        self._index += 1
+        self._index = (self._index + 1) % self.count  # 마지막 다음은 첫 문장
         self.index_changed.emit(self._index)
         self._play_current_from_start()
 
