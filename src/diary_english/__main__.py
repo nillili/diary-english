@@ -26,6 +26,7 @@ from .workers import TaskRunner
 
 DEFAULT_TRANSLATION_MODEL = "qwen2.5:7b"
 ICON_FILE = Path(__file__).resolve().parents[2] / "assets" / "icon.png"
+THEME_FILE = Path(__file__).resolve().parent / "ui" / "theme.qss"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -39,6 +40,8 @@ def main(argv: list[str] | None = None) -> int:
     app.setDesktopFileName("diary-english")  # 패널 고정: diary-english.desktop 과 연결
     if ICON_FILE.exists():
         app.setWindowIcon(QIcon(str(ICON_FILE)))
+    if THEME_FILE.exists():
+        app.setStyleSheet(THEME_FILE.read_text(encoding="utf-8"))
 
     paths, docs_dir = qt_app_paths()
     if args.dev_fake:

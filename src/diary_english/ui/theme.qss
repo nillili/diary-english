@@ -1,0 +1,47 @@
+/* 화면 색과 모양. 어두운 바탕에 민트 포인트. */
+QWidget { background: #14181f; color: #d6dde6; font-family: "Noto Sans CJK KR", sans-serif; font-size: 15px; }
+QTabWidget::pane { border: none; border-top: 1px solid #242c38; top: -1px; }
+QTabBar::tab { background: transparent; color: #7a8696; padding: 10px 20px; margin-right: 4px;
+               border: none; border-bottom: 2px solid transparent; }
+QTabBar::tab:selected { color: #35d0a5; border-bottom: 2px solid #35d0a5; font-weight: bold; }
+QTabBar::tab:hover:!selected { color: #b6c0cc; }
+
+QPlainTextEdit#diaryInput { background: #1b212b; border: 1px solid #2c3543; border-radius: 8px;
+                            padding: 10px; font-size: 16px; color: #e6ecf3; selection-background-color: #1f6f5c; }
+QPlainTextEdit#diaryInput:focus { border: 1px solid #35d0a5; }
+
+QFrame#playArea { background: transparent; border: none; }
+QTextEdit#translationView { background: #1b212b; border: 1px solid #2c3543; border-radius: 8px;
+                            padding: 12px; font-size: 19px; color: #f0f4f8; }
+
+QPushButton { background: #222a35; color: #c4ccd6; border: 1px solid #323c4a; border-radius: 6px;
+              padding: 8px 22px; }
+QPushButton:hover { background: #2b3542; }
+QPushButton:disabled { background: #1a1f27; color: #4e5765; border-color: #242c38; }
+QPushButton#convertButton, QPushButton#playButton { background: #35d0a5; color: #0d1319; border: none; font-weight: bold; }
+QPushButton#convertButton:hover, QPushButton#playButton:hover { background: #2bb892; }
+QPushButton#convertButton:disabled, QPushButton#playButton:disabled { background: #22443c; color: #5c7a70; }
+QPushButton#saveButton { background: transparent; color: #35d0a5; border: 1px solid #35d0a5; font-weight: bold; }
+QPushButton#saveButton:disabled { color: #4e5765; border-color: #2c3543; }
+
+QRadioButton { color: #c4ccd6; spacing: 8px; }
+QRadioButton::indicator { width: 15px; height: 15px; border-radius: 8px;
+                          border: 1px solid #4e5765; background: #1b212b; }
+QRadioButton::indicator:hover { border-color: #35d0a5; }
+QRadioButton::indicator:checked { border: 1px solid #35d0a5; background: #35d0a5; }
+QRadioButton:disabled { color: #4e5765; }
+
+QTableWidget { background: #1b212b; alternate-background-color: #1b212b; gridline-color: #2c3543;
+               border: 1px solid #2c3543; border-radius: 8px; color: #d6dde6; }
+QTableWidget::item { padding: 6px 4px; border: none; }
+QTableWidget::item:selected { background: #22303a; color: #35d0a5; }
+QHeaderView::section { background: #222a35; color: #97a2b0; border: none;
+                       border-bottom: 1px solid #2c3543; padding: 8px 4px; }
+QTableCornerButton::section { background: #222a35; border: none; }
+
+QLabel { color: #97a2b0; }
+QLabel#statusLabel { color: #35d0a5; }
+QScrollBar:vertical { background: transparent; width: 10px; margin: 2px; }
+QScrollBar::handle:vertical { background: #3a4553; border-radius: 5px; min-height: 30px; }
+QScrollBar::add-line, QScrollBar::sub-line { height: 0; }
+QMessageBox { background: #1b212b; }
